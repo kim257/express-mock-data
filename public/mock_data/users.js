@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 usersProfile = [
   {
     "id": 1,
@@ -229,5 +231,13 @@ usersProfile = [
       "bs": "target end-to-end models"
     }
   }
-]
-module.exports = usersProfile;
+];
+
+exports.findById = function (id) {
+  return _.find(usersProfile, {'id': parseInt(id)})
+};
+
+
+exports.getAll = function () {
+  return usersProfile
+};
